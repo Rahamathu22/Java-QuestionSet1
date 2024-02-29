@@ -1,11 +1,12 @@
 import java.io.IOException;
+import java.util.Random;
 import java.util.Scanner;
 import java.lang.Math;
 public class demo
 {
     public static void main(String[] args)
     {
-        Q12();
+        Q20();
     }
 
     public static int GetInteger(String message)
@@ -185,6 +186,116 @@ public class demo
         System.out.println("The value for a is:"+a);
         System.out.println("The values for b is"+b);
     }
+
+    public static void Q13()
+    {
+        System.out.println("The values before swap");
+        int value1=GetInteger("Enter the value for a:");
+        int value2=GetInteger("enter the value for b:");
+        SwapWithoutOverFlow(value1, value2);
+    }
+
+    public static void SwapWithoutOverFlow(int a,int b)
+    {
+       a=a^b;
+       b=a^b;
+       a=a^b;
+       System.out.println("The values after swap  ");
+       System.out.println("The value for a is:"+a);
+       System.out.println("The value for b is"+b);
+    }
+
+    public static void Q14()
+    {
+      System.out.println("The random number is: "+RandomNum());
+    }
+
+    public static int RandomNum()
+    {
+        Random r=new Random();
+        int num=r.nextInt(1,100);
+        return num;
+    }
+
+    public static  void Q15()
+    {
+      double Length=GetDouble("Enter the value for length in feet");
+      double Width=GetDouble("Enter the value for width in feet");
+      System.out.println("Area of field in acre: "+AreaOfField(Length, Width));
+    }
+    public static double AreaOfField(double l,double w)
+    {
+      int OneAcre=43560;
+      return (l*w)/OneAcre;
+    }
+
+    public static void Q16()
+    {
+        int Number=GetInteger("Enter the value to find the sum of Natural numbers:");
+        System.out.println("The sum of natural number is:"+NaturalNumbers(Number));
+    }
+
+    public static double NaturalNumbers(int n)
+    {
+        return (n*(n+1)/2);
+    }
+
+    public static void Q17()
+    {
+        int Mark1=GetInteger("Enter the value for mark 1:");
+        int Mark2=GetInteger("Enter the value for mark 2:");
+        int Mark3=GetInteger("Enter the value for mark 3:");
+        System.out.println("The average of the given number is:"+Average(Mark1, Mark2, Mark3));
+    }
+
+    public static double Average(int m1,int m2,int m3)
+    {
+        int result=m1+m2+m3;
+        return result/3;
+    }
+
+    public static void Q18()
+    {
+        double Amount=GetDouble("Enter the bill amount");
+        System.out.println("The tip percentege of the given value is:"+TipPercentage(Amount));
+    }
+
+    public static double TipPercentage(double a)
+    {
+        return (a*(5/100.0));
+    }
+
+    public static void Q19()
+    {
+        double Amount=GetDouble("Enter the total amount:");
+        int TaxPercent=GetInteger("Enter the tax percentage:");
+        System.out.println("The net amount of the product is:"+NetAmount(Amount, TaxPercent));
+    }
+
+    public static double NetAmount(double amount,int taxPercent)
+    {
+        return(amount/(1+taxPercent/100.0));
+    }
+
+    public static void Q20()
+    {
+        int BasicPay=GetInteger("Enter the total amount:");
+        int DA=GetInteger("Enter the DA percentage:");
+        int TA=GetInteger("Enter the TA Percentage:");
+        System.out.println("The Gross Pay of the Product is:"+GrossPay(BasicPay, DA, TA));
+    }
+
+    public static double GrossPay(int bp,int da,int ta)
+    {
+        double Da=bp*(da/100.0);
+        double Ta=bp*(ta/100.0);
+        double Pf=bp*(8/100.0);
+        return (bp+Da+Ta-Pf);
+
+
+    }
+
+
 }
 
     
