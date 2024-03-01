@@ -306,6 +306,19 @@ public class demo
         return (p*n*r/100.0);
     }
 
+    public static void Q22()
+    {
+        int Principle=GetInteger("Enter the principle amount:");
+        int Years=GetInteger("Enter the time period:");
+        int Compound =GetInteger("Enter the annual Compound:");
+        double Rate=GetDouble("Enter the interest rate:");
+    }
+
+    public static Double CompoundInterest(int p,double n,double c,double r)
+    {
+        return (p*((1+r/n)Math.pow(n, c)));
+    } 
+
     public static void Q23()
     {
         double Height=GetDouble("Enter the height in cm:");
