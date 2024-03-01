@@ -6,7 +6,7 @@ public class demo
 {
     public static void main(String[] args)
     {
-        Q20();
+        Q25();
     }
 
     public static int GetInteger(String message)
@@ -291,10 +291,51 @@ public class demo
         double Ta=bp*(ta/100.0);
         double Pf=bp*(8/100.0);
         return (bp+Da+Ta-Pf);
-
-
+    }
+    
+    public static void Q21()
+    {
+        int Principle=GetInteger("Enter the principle amount");
+        int NumberPeriod=GetInteger("Enter the number of periods");
+        double Rate=GetDouble("Enter the Rate");
+        System.out.println("the calculated simple interest is:"+SimpleInterest(Principle, NumberPeriod, Rate));
     }
 
+    public static double SimpleInterest(int p,int n,double r)
+    {
+        return (p*n*r/100.0);
+    }
+
+    public static void Q23()
+    {
+        double Height=GetDouble("Enter the height in cm:");
+        System.out.println(Height/2.54);
+    }
+
+    public static void Q25()
+    {
+        Scanner name=new Scanner(System.in);
+        System.out.println("Enter your name:");
+        String Name=name.nextLine();
+        int RollNo=GetInteger("Enter the roll no:");
+        int Mark1=GetInteger("Enter the Value for mark 1:");
+        int Mark2=GetInteger("Enter the value for mark 2");
+        int Mark3=GetInteger("Enter the value for mark 3");
+        System.out.println("Your Name is: "+Name);
+        System.out.println("Your roll number is: "+RollNo);
+        System.out.println("Your Mark in subject 1:"+Mark1);
+        System.out.println("Your Mark in subject 2:"+Mark2);
+        System.out.println("Your Mark in subject 3:"+Mark3);
+        Rank(Mark1, Mark2, Mark3);
+    }
+
+    public static void Rank(int m1,int m2,int m3)
+    {
+        int total=m1+m2+m3;
+        double avrg=total/3;
+        System.out.println("Total: "+total);
+        System.out.println("Average: "+avrg);
+    }
 
 }
 
